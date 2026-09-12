@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "master": "node master/index.js",
+    "slave1": "set SLAVE_INSTANCE=1&& node slave/index.js",
+    "slave2": "set SLAVE_INSTANCE=2&& node slave/index.js",
+    "slave3": "set SLAVE_INSTANCE=3&& node slave/index.js",
+    "slave4": "set SLAVE_INSTANCE=4&& node slave/index.js",
+    "slave5": "set SLAVE_INSTANCE=5&& node slave/index.js",
+    "start": "concurrently --kill-others-on-fail \"npm run master\" \"npm run slave1\" \"npm run slave2\" \"npm run slave3\" \"npm run slave4\" \"npm run slave5\""
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.2",
+    "@ziplayer/plugin": "^1.0.0",
+    "discord.js": "^14.27.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "opusscript": "^0.1.1",
+    "ziplayer": "^1.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
